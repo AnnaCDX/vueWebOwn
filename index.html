@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>mine</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+    <script type="text/javascript">
+      document.body.addEventListener(
+        "touchend",
+        function(event) {
+          let nowTime = new Date().getTime();
+          let detla = nowTime - lastTime;
+          if (detla < 500 && detla > 0) {
+            event.preventDefault();
+            return false;
+          }
+          lastTime = nowTime;
+        },
+        false
+      );
+    </script>
+  </body>
+</html>
